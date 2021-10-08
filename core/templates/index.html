@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block container %}
+<header class="masthead">
+  <div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+          <h4>WELCOME TO APPPPPPPPPPPP</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque semper
+          felis arcu. Morbi scelerisque est et diam auctor lobortis. Quisque tincidunt
+          nisl imperdiet ipsum malesuada, vel gravida ex condimentum.
+          nisl sodales ac. Pellentesque dui tortor, ornare sit amet lacus at, semper
+          consequat eros. Quisque magna quam, auctor sit amet consequat nec, gravida nec
+          felis.</p>
+        </div>
+
+        <div class="col-sm-6">
+
+          <form action="" method="POST">
+
+            {% if errors %}
+            <div class="alert alert-danger">
+              {{errors}}
+            </div>
+            {% endif %}
+
+
+            {% csrf_token %}
+            <div class="row g-3 offset-sm-4">
+              <div class="col-md-6">
+                <input type="text" name="username" class="form-control"
+                  placeholder="Username" aria-label="Username">
+              </div>
+            </div><br>
+            <div class="row g-3 offset-sm-4">
+              <div class="col-md-6">
+                <input type="text" name="password" class="form-control"
+                  placeholder="Password" aria-label="password">
+              </div>
+            </div><br>
+            <div>
+              <input type="submit" value="Login" class="btn btn-success">
+            </div>
+
+          </form>
+
+        </div>
+    </div>
+  </div>
+</header>
+
+{% endblock %}

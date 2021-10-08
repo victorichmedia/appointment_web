@@ -1,0 +1,60 @@
+body {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.bg-custom-header {
+    background-color: #245385;
+    color: #fff;
+}
+
+.bg-custom-header .nav-link {
+    color: #fff
+}
+
+
+/* CBT PAGE */
+
+.eachExam {display: none}
+
+/* Slideshow container */
+.examContainer {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+  /* height: 250px; */
+}
+
+
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 25px;
+  width: 25px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.cbt .active, .cbt .dot:hover {
+  background-color: #717171;
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+  .appointment-inner { padding: 0 20px; }
+}
+
+
+nav .sidenav-trigger-right {
+    float: right;
+    position: relative;
+    z-index: 1;
+    height: 56px;
+    margin: 0 18px;
+    color: red;
+}
