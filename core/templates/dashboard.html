@@ -1,7 +1,10 @@
 
+{% extends "base.html" %}
 {% load static %}
 
+
 {% block container %}
+
   <h1>Dashboard</h1>
-  <a href="{% url 'logout' %}">Logout</a>
+  {{ request.user.appointment.firstname }}
 {% endblock %}

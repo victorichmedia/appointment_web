@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block container %}
+<ul  class="list-unstyled list-inline">
+  <li class="list-inline-item">FIRSTNAME : {{ appointment.firstname }}</li>
+  <li class="list-inline-item">LASTNAME : {{ appointment.lastname }}</li>
+  <li class="list-inline-item">EMAIL : <a href="mailto:{{ appointment.email }}">{{ appointment.email }}</a></li>
+  <li class="list-inline-item"> PHONE NUMBER : <a href="tel:{{ appointment.phone_number }}">{{ appointment.phone_number }}</a></li>
+  <li class="list-inline-item"> DATE : {{ appointment.date }}</li>
+  <li class="list-inline-item">TIME : {{ appointment.time }}</li>
+  <li class="list-inline-item">BEST METHOD FOR CONTACT : {{ appointment.contact_method }}</li>
+  <li class="list-inline-item">BEST TIME OF THE DAY TO REACH YOU : {{ appointment.time_of_the_day_to_reach }}</li>
+  <li class="list-inline-item">HOW CAN WE HELP YOU : {{ appointment.how_can_we_help_you }}</li>
+  <li class="list-inline-item">ADDITONAL NOTES : {{ appointment.additional_notes }}</li>
+</ul>
+
+{% endblock container %}

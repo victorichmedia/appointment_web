@@ -1,4 +1,4 @@
-from typing import ByteString
+from django.urls import reverse
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 from django.db import models
 
@@ -28,6 +28,7 @@ class User(AbstractBaseUser):
     lastname = models.CharField(max_length=200)
     firstname = models.CharField(max_length=200)
     phone = models.CharField(max_length=15, blank=True)
+    address = models.CharField(max_length=200, null=True)
     occupation = models.CharField(max_length=200)
 
     is_active = models.BooleanField(default=True)
@@ -64,7 +65,7 @@ class Appointment(models.Model):
         ("Evening", "Evening"),
         ("Night", "Night"),
     ]
-
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     firstname = models.CharField(max_length=200)
     lastname = models.CharField(max_length=200)
     phone_number = models.CharField(max_length=200)
@@ -78,3 +79,6 @@ class Appointment(models.Model):
 
     def __str__(self):
         return f"{self.lastname} {self.firstname}"
+
+    def detail_url(self):
+        return reverse("appointment-details", kwargs={"pk": self.pk})

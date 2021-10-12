@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+
+{% block container %}
+<header class="masthead">
+
+<div class="row">
+  <div class="col-sm-12">
+    <h4 class="mb-3 mt-3"> Appointment</h4>
+    <div class="app-form">
+      <form action="" method="POST"  class="row" >
+        {% csrf_token %}
+
+
+
+        {% for field in form %}
+        <div class="col-sm-6 mb-2">
+          {{field.label_tag}}<br>
+          <small>{{field.help_text}}</small>
+          {{field}}
+          <small class="text-danger">
+
+            {% for error in field.errors %}
+            {{error}}
+            {% endfor %}
+
+          </small>
+
+        </div>
+        {% endfor %}
+
+        <div>
+          <input type="submit" class="btn btn-success" value="Submit">
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>
+</header>
+{% endblock container %}

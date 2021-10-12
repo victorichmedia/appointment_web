@@ -4,27 +4,37 @@
 {% block container %}
 <header class="masthead">
   <div class="container">
-    <div class="row g-3 ">
-      <div class="col-sm-6 offset-3">
-        <h4>Start a new registration</h4>
-        <form class="" action="" method="POST" >
-          {% csrf_token %}
+    <div class="row">
+      <div class="col-sm-12">
+        <h4 class="mb-3 mt-3"> Appointment</h4>
+        <div class="app-form">
+          <form action="" method="POST" class="row">
+            {% csrf_token %}
 
 
-          {% for field in form %}
-          <div class="mb-2">
-            {{field.label_tag}}
-            {{field}}
-            {{field.help_text}}
-          </div>
-          {% endfor %}
 
-          <div>
-            <input type="button"  class="btn btn-success"
-              value="Register">
-          </div>
+            {% for field in form %}
+            <div class="col-sm-6 mb-2">
+              {{field.label_tag}}<br>
+              <small>{{field.help_text}}</small>
+              {{field}}
+              <small class="text-danger">
 
-        </form>
+                {% for error in field.errors %}
+                {{error}}
+                {% endfor %}
+
+              </small>
+
+            </div>
+            {% endfor %}
+
+            <div>
+              <input type="submit" class="btn btn-success" value="Submit">
+            </div>
+
+          </form>
+        </div>
       </div>
     </div>
   </div>
