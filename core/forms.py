@@ -28,7 +28,7 @@ class ModelFormBase(forms.ModelForm):
 class AppointmentForm(ModelFormBase):
     class Meta:
         model = Appointment
-        exclude = ("user",)
+        exclude = ()
         widgets = {
             "date": forms.DateInput(attrs={"type": "date"}),
             'time': forms.TimeInput(attrs={'type': 'time'})

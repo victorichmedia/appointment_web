@@ -65,7 +65,7 @@ class Appointment(models.Model):
         ("Evening", "Evening"),
         ("Night", "Night"),
     ]
-    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, editable=False)
     firstname = models.CharField(max_length=200)
     lastname = models.CharField(max_length=200)
     phone_number = models.CharField(max_length=200)

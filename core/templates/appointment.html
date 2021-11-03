@@ -2,10 +2,9 @@
 {% load static %}
 
 {% block container %}
-<h2> Hello {{request.user.username}} </h2>
 <ul>
-  {% for app in appointments %}
-  <a href="{% url 'details' app.pk %}"><li>{{ app.firstname }}</li></a>
+  {% for item in items %}
+  <li><a href="{% url 'details' item.pk %}">{{ item.firstname }}</a></li>
   {% endfor %}
 </ul>
 
